@@ -1,5 +1,8 @@
 <?php
 
+// php spark make:migration Categories.php
+// php spark migrate
+
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
@@ -22,11 +25,11 @@ class Categories extends Migration
         ]);
 
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('categorias');
+        $this->forge->createTable('categories');
     }
 
     public function down()
     {
-        $this->forge->dropTable('categorias')
+        $this->forge->dropTable('categories');
     }
 }

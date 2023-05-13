@@ -18,6 +18,7 @@ $routes->set404Override();
 
 // php spark routes
 $routes->presenter('movie');
+$routes->presenter('category');
 
 
 
