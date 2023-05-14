@@ -7,7 +7,7 @@
     <title>創建標籤</title>
 </head>
 <body>
-    <form action="/category/create" method="post">
+    <form action="/dashboard/category/create" method="post">
         <?= view('category/_form')?>
     </form>
 </body>

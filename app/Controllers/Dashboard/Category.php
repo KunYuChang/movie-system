@@ -2,7 +2,7 @@
 
 // php spark make:controller Category
 
-namespace App\Controllers;
+namespace App\Controllers\Dashboard;
 
 use App\Controllers\BaseController;
 use App\Models\CategoryModel;
@@ -14,7 +14,7 @@ class Category extends BaseController
         $categoryModel = new CategoryModel();
 
         
-        return view('category/index', [
+        return view('dashboard/category/index', [
             'categories' => $categoryModel->findAll()
         ]);
     }
@@ -23,7 +23,7 @@ class Category extends BaseController
         $categoryModel = new CategoryModel();
 
 
-        return view('category/new', [
+        return view('dashboard/category/new', [
             'category' => $categoryModel->getEmptyMovie()
         ]);
     }
@@ -34,12 +34,14 @@ class Category extends BaseController
         $categoryModel->insert([
             'title' => $this->request->getPost('title')
         ]);
+
+        return redirect()->back();
     }
 
     public function show($id) {
         $categoryModel = new CategoryModel();
 
-        return view('category/show', [
+        return view('dashboard/category/show', [
             'category' => $categoryModel->find($id)
         ]);
     }
@@ -47,7 +49,7 @@ class Category extends BaseController
     public function edit($id) {
         $categoryModel = new CategoryModel();
 
-        return view('category/edit', [
+        return view('dashboard/category/edit', [
             'category' => $categoryModel->find($id)
         ]);
     }
@@ -58,6 +60,8 @@ class Category extends BaseController
         $categoryModel->update($id, [
             'title' => $this->request->getPost('title')
         ]);
+
+        return redirect()->to('/dashboard/category');
     }
 
     public function delete($id) {

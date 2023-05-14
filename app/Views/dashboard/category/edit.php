@@ -7,8 +7,8 @@
     <title>創建標籤</title>
 </head>
 <body>
-    <form action="/category/update/<?= $category['id'] ?>" method="post">
-        <?= view('category/_form')?>
+    <form action="/dashboard/category/update/<?= $category['id'] ?>" method="post">
+        <?= view('/dashboard/category/_form')?>
     </form>
 </body>
 </html>

@@ -17,7 +17,7 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'http://localhost:8080/';
+    public string $baseURL = 'http://codeigniter4.test/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -41,8 +41,10 @@ class App extends BaseConfig
      * Typically this will be your index.php file, unless you've renamed it to
      * something else. If you are using mod_rewrite to remove the page set this
      * variable so that it is blank.
+     * 
+     * 保持空值，否則轉址路由會有問題。
      */
-    public string $indexPage = 'index.php';
+    public string $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------

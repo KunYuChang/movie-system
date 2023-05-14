@@ -7,8 +7,8 @@
     <title>創建電影</title>
 </head>
 <body>
-    <form action="/movie/update/<?= $movie['id'] ?>" method="post">
-        <?= view('movie/_form') ?>
+    <form action="/dashboard/movie/update/<?= $movie['id'] ?>" method="post">
+        <?= view('/dashboard/movie/_form') ?>
     </form>
 </body>
 </html>

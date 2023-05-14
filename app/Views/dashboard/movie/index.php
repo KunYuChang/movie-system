@@ -9,7 +9,7 @@
 <body>
     <h1>電影列表</h1>
 
-    <a href="/movie/new/">新增</a>
+    <a href="/dashboard/movie/new/">新增</a>
     <table>
         <tr>
             <th>ID</th>
@@ -23,10 +23,10 @@
                 <td><?= $movie['title']?></td>
                 <td><?= $movie['description']?></td>
                 <td>
-                    <a href="/movie/show/<?=$movie['id']?>">顯示</a>
-                    <a href="/movie/edit/<?=$movie['id']?>">編輯</a>
+                    <a href="/dashboard/movie/show/<?=$movie['id']?>">顯示</a>
+                    <a href="/dashboard/movie/edit/<?=$movie['id']?>">編輯</a>
 
-                    <form action="/movie/delete/<?= $movie['id'] ?>" method="post">
+                    <form action="/dashboard/movie/delete/<?= $movie['id'] ?>" method="post">
                         <button type="submit">Delete</button>
                     </form>
                 </td>

@@ -7,7 +7,7 @@
     <title>創建電影</title>
 </head>
 <body>
-    <form action="/movie/create" method="post">
+    <form action="/dashboard/movie/create" method="post">
         <p>
             <label for="title">標題</label>
             <input id="title" type="text" name="title" placeholder="輸入標題">

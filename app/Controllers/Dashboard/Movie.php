@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Dashboard;
 
+use App\Controllers\BaseController;
 use App\Models\MovieModel;
 
 class Movie extends BaseController
@@ -14,13 +15,13 @@ class Movie extends BaseController
     }
 
     public function new() {
-        return view('movie/new', [
+        return view('dashboard/movie/new', [
             'movie' => $this->movieModel->getEmptyMovie()
         ]);
     }
 
     public function show($id) {
-        return view('movie/show', [
+        return view('dashboard/movie/show', [
             'movie' => $this->movieModel->find($id)
         ]);
     }
@@ -33,10 +34,12 @@ class Movie extends BaseController
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description')
         ]);
+
+        return redirect()->back();
     }
 
     public function edit($id) {
-        return view('movie/edit', [
+        return view('dashboard/movie/edit', [
             'movie' => $this->movieModel->find($id)
         ]);
     }
@@ -48,7 +51,9 @@ class Movie extends BaseController
             'description' => $this->request->getPost('description')
         ]);
 
-        echo 'update';
+        // return redirect()->back();
+        // return redirect()->route('/movie.test');
+        return redirect()->to('/dashboard/movie');
     }
 
     public function delete($id) {  
@@ -57,7 +62,7 @@ class Movie extends BaseController
 
     public function index()
     {
-        return view('movie/index', [
+        return view('dashboard/movie/index', [
             'movies' => $this->movieModel->findAll()
         ]);
     }

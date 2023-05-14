@@ -17,8 +17,17 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 
 // php spark routes
-$routes->presenter('movie');
-$routes->presenter('category');
+
+$routes->group('dashboard', function($routes) {
+    $routes->presenter('movie', ['controller' => 'Dashboard\Movie']);
+    $routes->presenter('category', ['controller' => 'Dashboard\Category']);
+
+    // php spark routes 只會看到 category
+    // $routes->presenter('category', ['only']);
+    // $routes->presenter('category', ['only' => 'index']);
+    // $routes->presenter('category', ['only' => ['index', 'new', 'create']]);
+    // $routes->presenter('category', ['except' => ['index', 'new', 'create']]);
+});
 
 
 
