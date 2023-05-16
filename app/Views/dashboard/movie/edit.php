@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>創建電影</title>
-</head>
-<body>
+<?= $this->extend('Layouts/dashboard') ?>
+<?= $this->section("title") ?>創建電影 - 電影系統<?= $this->endSection() ?>
+<?= $this->section("content") ?>
+
     <form action="/dashboard/movie/update/<?= $movie['id'] ?>" method="post">
         <?= view('/dashboard/movie/_form') ?>
     </form>
-</body>
-</html>
+
+<?= $this->endSection() ?>

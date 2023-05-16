@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>標籤</title>
-</head>
-<body>
+<?= $this->extend('Layouts/dashboard') ?>
+<?= $this->section("title") ?>標籤 - 電影系統<?= $this->endSection() ?>
+<?= $this->section("content") ?>
+
     <h1><?= $category['title'] ?></h1>
-</body>
-</html>
+
+<?= $this->endSection() ?>
