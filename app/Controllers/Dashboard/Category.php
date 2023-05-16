@@ -35,10 +35,13 @@ class Category extends BaseController
             'title' => $this->request->getPost('title')
         ]);
 
-        return redirect()->back();
+        return redirect()->to('/dashboard/category')->with('message', '標籤建立成功!');
     }
 
     public function show($id) {
+
+        session()->set('key', 'value');
+
         $categoryModel = new CategoryModel();
 
         return view('dashboard/category/show', [
@@ -61,12 +64,14 @@ class Category extends BaseController
             'title' => $this->request->getPost('title')
         ]);
 
-        return redirect()->to('/dashboard/category');
+        return redirect()->to('/dashboard/category')->with('message', '更新完成!');
     }
 
     public function delete($id) {
         $categoryModel = new CategoryModel();
  
         $categoryModel->delete($id);
+
+        return redirect()->back()->with('message', '刪除完成!');
     }
 }

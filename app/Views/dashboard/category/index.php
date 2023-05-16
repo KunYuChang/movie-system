@@ -9,6 +9,8 @@
 <body>
     <h1>標籤列表</h1>
 
+    <?= view('/partials/_session')?>
+
     <a href="/dashboard/category/new/">新增</a>
     
     <table>

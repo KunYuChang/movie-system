@@ -7,6 +7,8 @@
     <title>創建標籤</title>
 </head>
 <body>
+    <?= view('/partials/_session')?>
+
     <form action="/dashboard/category/update/<?= $category['id'] ?>" method="post">
         <?= view('/dashboard/category/_form')?>
     </form>

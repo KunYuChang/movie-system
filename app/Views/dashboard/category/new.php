@@ -7,8 +7,11 @@
     <title>創建標籤</title>
 </head>
 <body>
+    
+    <?= view('/partials/_session')?>
+    
     <form action="/dashboard/category/create" method="post">
-        <?= view('category/_form')?>
+        <?= view('/dashboard/category/_form')?>
     </form>
 </body>
 </html>

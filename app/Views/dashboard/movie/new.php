@@ -8,17 +8,7 @@
 </head>
 <body>
     <form action="/dashboard/movie/create" method="post">
-        <p>
-            <label for="title">標題</label>
-            <input id="title" type="text" name="title" placeholder="輸入標題">
-        </p>
-        <p>
-            <label for="description">描述</label>
-            <textarea name="description" id="description"></textarea>
-        </p>
-        <p>
-            <button>送出</button>
-        </p>
+        <?= view('/dashboard/movie/_form') ?>
     </form>
 </body>
 </html>
