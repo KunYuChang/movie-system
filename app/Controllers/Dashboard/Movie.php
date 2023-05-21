@@ -44,7 +44,7 @@ class Movie extends BaseController
                 'validation' => $this->validator
             ]);
 
-            return redirect()->back();
+            return redirect()->back()->withInput()
         }
 
         return redirect()->back();
@@ -72,7 +72,7 @@ class Movie extends BaseController
                'validation' => $this->validator
             ]);
 
-            return redirect()->back();
+            return redirect()->back()->withInput();
         }
 
          return redirect()->back()->with('message', '更新電影完成。');

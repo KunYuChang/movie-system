@@ -40,7 +40,7 @@ class Category extends BaseController
                 'validation' => $this->validator
             ]);
 
-            return redirect()->back();
+            return redirect()->back()->withInput();
         }
 
 
@@ -69,11 +69,20 @@ class Category extends BaseController
     public function update($id) {
         $categoryModel = new CategoryModel();
 
-        $categoryModel->update($id, [
-            'title' => $this->request->getPost('title')
-        ]);
+        if ($this->validate('categories')) {
+            $categoryModel->update($id, [
+                'title' => $this->request->getPost('title')
+            ]);
+        } else {
+            session()->setFlashdata([
+                'validation' => $this->validator
+            ]);
 
-        return redirect()->to('/dashboard/category')->with('message', '更新完成!');
+            return redirect()->back()->withInput();
+        }
+
+
+        return redirect()->back()->with('message', '標籤建立成功!');
     }
 
     public function delete($id) {
