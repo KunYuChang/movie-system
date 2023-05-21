@@ -14,14 +14,14 @@
     </tr>
     <?php foreach ($movies as $movie): ?>
         <tr>
-            <td><?= $movie['id']?></td>
-            <td><?= $movie['title']?></td>
-            <td><?= $movie['description']?></td>
+            <td><?= $movie->id ?></td>
+            <td><?= $movie->title ?></td>
+            <td><?= $movie->description ?></td>
             <td>
-                <a href="/dashboard/movie/show/<?=$movie['id']?>">顯示</a>
-                <a href="/dashboard/movie/edit/<?=$movie['id']?>">編輯</a>
+                <a href="/dashboard/movie/show/<?= $movie->id ?>">顯示</a>
+                <a href="/dashboard/movie/edit/<?= $movie->id ?>">編輯</a>
 
-                <form action="/dashboard/movie/delete/<?= $movie['id'] ?>" method="post">
+                <form action="/dashboard/movie/delete/<?= $movie->id ?>" method="post">
                     <button type="submit">Delete</button>
                 </form>
             </td>

@@ -7,7 +7,7 @@
 <!-- FORM ERROR -->
 <?= view('partials/_form-error') ?>
 
-    <form action="/dashboard/movie/update/<?= $movie['id'] ?>" method="post">
+    <form action="/dashboard/movie/update/<?= $movie->id ?>" method="post">
 
         <?= view('/dashboard/movie/_form') ?>
 

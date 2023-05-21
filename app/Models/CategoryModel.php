@@ -10,6 +10,7 @@ class CategoryModel extends Model
 {
     protected $table            = 'categories';
     protected $allowedFields    = ['title'];
+    protected $returnType       = 'object';
 
     public function getEmptyMovie()
     {

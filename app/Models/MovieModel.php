@@ -6,14 +6,15 @@ use CodeIgniter\Model;
 
 class MovieModel extends Model
 {
-    protected $DBGroup          = 'default';
     protected $table            = 'movies';
+    protected $returnType       = 'object';
+    protected $allowedFields    = ['title', 'description'];
     protected $primaryKey       = 'id';
+
+    protected $DBGroup          = 'default';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title', 'description'];
 
     // Dates
     protected $useTimestamps = false;

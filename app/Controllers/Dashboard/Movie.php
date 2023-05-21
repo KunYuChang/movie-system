@@ -23,6 +23,8 @@ class Movie extends BaseController
 
     public function show($id)
     {
+        // var_dump($this->movieModel->asObject()->find($id));
+
         return view('dashboard/movie/show', [
             'movie' => $this->movieModel->find($id)
         ]);
@@ -44,7 +46,7 @@ class Movie extends BaseController
                 'validation' => $this->validator
             ]);
 
-            return redirect()->back()->withInput()
+            return redirect()->back()->withInput();
         }
 
         return redirect()->back();
@@ -87,7 +89,14 @@ class Movie extends BaseController
 
     public function index()
     {
-        return view('dashboard/movie/index', [
+        // Query Builder
+        // $db = \Config\Database::connect();
+        // $builder = $db->table('movies');
+
+        // return $builder->limit(10, 20)->getCompiledSelect()
+
+
+        echo view('dashboard/movie/index', [
             'movies' => $this->movieModel->findAll()
         ]);
     }

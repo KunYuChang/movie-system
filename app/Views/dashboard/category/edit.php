@@ -5,7 +5,7 @@
 <!-- FORM ERROR -->
 <?= view('partials/_form-error') ?>
 
-    <form action="/dashboard/category/update/<?= $category['id'] ?>" method="post">
+    <form action="/dashboard/category/update/<?= $category->id ?>" method="post">
         <?= view('/dashboard/category/_form')?>
     </form>
 

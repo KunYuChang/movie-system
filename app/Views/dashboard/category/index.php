@@ -12,13 +12,13 @@
     </tr>
     <?php foreach ($categories as $category): ?>
         <tr>
-            <td><?= $category['id']?></td>
-            <td><?= $category['title']?></td>
+            <td><?= $category->id ?></td>
+            <td><?= $category->title ?></td>
             <td>
-                <a href="/dashboard/category/show/<?=$category['id']?>">顯示</a>
-                <a href="/dashboard/category/edit/<?=$category['id']?>">編輯</a>
+                <a href="/dashboard/category/show/<?=$category->id ?>">顯示</a>
+                <a href="/dashboard/category/edit/<?=$category->id ?>">編輯</a>
 
-                <form action="/category/delete/<?= $category['id'] ?>" method="post">
+                <form action="/category/delete/<?= $category->id ?>" method="post">
                     <button type="submit">Delete</button>
                 </form>
             </td>
