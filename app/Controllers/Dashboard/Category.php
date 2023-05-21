@@ -31,11 +31,20 @@ class Category extends BaseController
     public function create() {
         $categoryModel = new CategoryModel();
 
-        $categoryModel->insert([
-            'title' => $this->request->getPost('title')
-        ]);
+        if ($this->validate('categories')) {
+            $categoryModel->insert([
+                'title' => $this->request->getPost('title')
+            ]);
+        } else {
+            session()->setFlashdata([
+                'validation' => $this->validator
+            ]);
 
-        return redirect()->to('/dashboard/category')->with('message', '標籤建立成功!');
+            return redirect()->back();
+        }
+
+
+        return redirect()->back()->with('message', '標籤建立成功!');
     }
 
     public function show($id) {
