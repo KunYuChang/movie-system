@@ -19,6 +19,7 @@ $routes->set404Override();
 // php spark routes
 
 $routes->group('dashboard', function($routes) {
+    $routes->get('user/create', '\App\Controllers\Web\User::create_user');
     $routes->presenter('movie', ['controller' => 'Dashboard\Movie']);
     $routes->presenter('category', ['controller' => 'Dashboard\Category']);
 
@@ -28,6 +29,14 @@ $routes->group('dashboard', function($routes) {
     // $routes->presenter('category', ['only' => ['index', 'new', 'create']]);
     // $routes->presenter('category', ['except' => ['index', 'new', 'create']]);
 });
+
+// Login
+$routes->get('login', '\App\Controllers\Web\user::login', ['as' => 'user.login']);
+$routes->get('login_post', '\App\Controllers\Web\user::login', ['as' => 'user.login_post']);
+
+// Register
+$routes->get('register', '\App\Controllers\Web\user::register', ['as' => 'user.register']);
+$routes->get('register_post', '\App\Controllers\Web\user::register', ['as' => 'user.register_post']);
 
 
 
